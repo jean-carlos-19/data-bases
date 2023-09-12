@@ -1,8 +1,8 @@
 create function CreateLaboratory (nameLaboratory varchar(50)) 
-    return table (
+    returns table (
         id integer,
         message varchar(50)
-    );
+    )  language plpgsql
 as $$
     declare idSuccessfulRespose = 200;
     declare messageSuccessfulRespose = "Se ha creado correctamente el laboratorio: "||nameLaboratory;
@@ -16,7 +16,7 @@ begin
     idLaboratory = existLaboratory(nameLaboratory);
 
     if idLaboratory is null then
-        insert into Laboratory (laboraty) values (nameLaboratory);
+        insert into Laboratories (laboraty) values (nameLaboratory);
         return query (
             idSuccessfulRespose,
             messageSuccessfulRespose
