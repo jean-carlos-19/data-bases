@@ -1,0 +1,1 @@
+select idVocabulary, name from showAllEnableVocabularies;

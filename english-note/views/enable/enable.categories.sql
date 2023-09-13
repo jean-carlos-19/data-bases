@@ -1,2 +1,5 @@
 create view if not exists showAllEnableCategories as
-select idCategory, name from categories where not isActivate = 1; 
+select idCategory, lower(name) as name
+from categories 
+where isActivate = 1
+order by name; 

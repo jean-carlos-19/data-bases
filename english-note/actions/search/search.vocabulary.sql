@@ -1,0 +1,1 @@
+select idVocabulary, name from showAllEnableVocabularies where name like 'li%';
